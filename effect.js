@@ -14,7 +14,7 @@ $('document').ready(function(){
 			var gap = Math.min(10, Math.max(0, (viewportWidth - balloonWidth * 7) / 8));
 			var totalWidth = balloonWidth * 7 + gap * 6;
 			var left = Math.max(0, (viewportWidth - totalWidth) / 2);
-			var top = Math.max(16, Math.min(240, $(window).height() * 0.3));
+			var top = viewportWidth <= 600 ? 16 : Math.max(16, Math.min(240, $(window).height() * 0.3));
 			$balloons.each(function(index) {
 				$(this).css({width: balloonWidth, height: balloonWidth * 1.83, backgroundSize: balloonWidth + 'px ' + (balloonWidth * 1.83) + 'px', bottom: 'auto', zIndex: 100});
 				$(this).find('h2').css({fontSize: Math.max(18, balloonWidth * 0.5), margin: '12px 0 10px'});
