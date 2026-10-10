@@ -8,6 +8,10 @@ body {
 	transition:background-color linear 5s;
 	overflow-x:hidden;
 }
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
 .container {
 	display: none;
 }
@@ -1084,6 +1088,22 @@ audio {
 	height: 183px;
 	background-repeat: no-repeat no-repeat;
 	background-size: 100px 183px;
+}
+.balloons h2 {
+	position: relative;
+	z-index: 101;
+}
+@media (max-width: 600px) {
+	.balloons {
+		width: min(100px, calc((100vw - 24px) / 7));
+		height: auto;
+		aspect-ratio: 100 / 183;
+		background-size: 100% 100%;
+	}
+	.balloons h2 {
+		font-size: clamp(18px, 6vw, 50px);
+		margin-top: 12px;
+	}
 }
 .balloons h2 {
 	text-transform: uppercase;
